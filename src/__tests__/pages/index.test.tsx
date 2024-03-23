@@ -4,5 +4,7 @@ import { expect, test } from 'vitest';
 
 test('Home page', () => {
   render(<Page />);
-  expect(screen.getByRole('heading', { name: 'Hello, World!' })).toBeDefined();
+  expect(
+    screen.getByRole('heading', { name: 'Hello, World!' }),
+  ).toBeInTheDocument();
 });
