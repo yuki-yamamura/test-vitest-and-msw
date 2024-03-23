@@ -7,8 +7,9 @@ describe('HackerNewsStories', () => {
     render(<HackerNewsStories />);
 
     const list = await screen.findByRole('list');
-    const id = within(list).getByRole('listitem', { name: '39756519' });
 
-    expect(id).toBeDefined();
+    for (let i = 1; i <= 5; i++) {
+      expect(within(list).getByRole('listitem', { name: i.toString() }));
+    }
   });
 });
