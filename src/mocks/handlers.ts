@@ -1,10 +1,10 @@
-import { rest } from 'msw';
+import { http } from 'msw';
 
 export const handlers = [
-  rest.get(
+  http.get(
     'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty',
-    (req, res, ctx) => {
-      return res(ctx.json([1, 2, 3, 4, 5]));
+    () => {
+      return new Response(JSON.stringify([1, 2, 3, 4, 5]));
     },
   ),
 ];
